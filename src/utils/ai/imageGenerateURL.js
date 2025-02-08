@@ -1,4 +1,4 @@
-const { default: axios } = require('axios');
+const axios = require('axios');
 require('dotenv').config()
 const image_key = process.env.IMGBB_apiKey;
 const image_api = `https://api.imgbb.com/1/upload?key=${image_key}`
