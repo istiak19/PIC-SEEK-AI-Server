@@ -11,9 +11,10 @@ const client = new MongoClient(process.env.URI, {
 });
 
 const imageCollection = client.db('picSeek').collection('image');
+const commentCollection = client.db('picSeek').collection('comment');
 
 async function connectDB() {
     return client.connect();
 }
 
-module.exports = { connectDB, imageCollection };
+module.exports = { connectDB, imageCollection, commentCollection };

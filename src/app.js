@@ -3,10 +3,8 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const logger = require('./middleware/logger')
-const getBuffer = require('./utils/ai/getImageBuffer')
-const imageGenerateURL = require('./utils/ai/imageGenerateURL')
-const { imageCollection } = require('./utils/connectDB')
-const imageRouter = require('./routers/mage.route')
+const imageRouter = require('./routers/image.route')
+const commentRouter = require('./routers/comment.router')
 
 
 // Middleware
@@ -17,6 +15,7 @@ app.use(express.json());
 app.use(logger);
 
 app.use("/api/v1/image", imageRouter);
+app.use("/api/v1/comment", commentRouter);
 // playGround
 
 
