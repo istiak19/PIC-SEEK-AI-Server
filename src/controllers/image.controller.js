@@ -47,9 +47,9 @@ const getSingleImage = async (req, res) => {
         const id = req.params.id;
         const query = { _id: new ObjectId(id) };
         const options = {
-            projection: { _id: 1, userName: 1, imageUrl: 1, userImg: 1 }
+            projection: { _id: 1, userName: 1, imageUrl: 1, userImg: 1, prompt: 1 }
         };
-        
+
         const result = await imageCollection.findOne(query, options);
         res.send(result)
     } catch (err) {
